@@ -20,6 +20,13 @@ Subjective listening tests provide perhaps the most reliable method for assessme
 
 ```pip install oqmscore```
 
+## How to use:
+- To import:  ``` from oqmscore import SSNR, PESQ, LLR, WSS ```
+- To initialize: ``` b=LLR() ```
+- To load data: ``` b.load("path for clear utterance","path for noisy utterance") ```
+- To score: ``` b.score() ```
+- To check score: ``` b.llr_score ```
+
 ## References:
 
 - The PESQ implementation is done using [PESQ python wrapper](https://github.com/ludlows/python-pesq/tree/master/pesq)
