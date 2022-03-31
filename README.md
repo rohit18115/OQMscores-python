@@ -25,4 +25,6 @@ Subjective listening tests provide perhaps the most reliable method for assessme
 - The PESQ implementation is done using [PESQ python wrapper](https://github.com/ludlows/python-pesq/tree/master/pesq)
 - The SegSNR, WSS and LLR implementations are take from [SEGAN-repository](https://github.com/santi-pdp/segan_pytorch/blob/master/segan/utils.py)
 
-
+## to-dos:
+- Write unit tests
+- Write doc strings for the classes and functions properly.
