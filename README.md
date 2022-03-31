@@ -27,4 +27,4 @@ Subjective listening tests provide perhaps the most reliable method for assessme
 
 ## to-dos:
 - Write unit tests
-- Write doc strings for the classes and functions properly.
+- ~~Write doc strings for the classes and functions properly.
