@@ -7,13 +7,14 @@ class OQM:
 
 	def __init__(self, clean_utt = '', noise_utt = ''):
 	
-		""" Generic distribution class for calculating and 
-		visualizing a probability distribution.
+		""" Generic Objective quality measure class for initializing variables and loading 
+		the speech samples
 	
 		Attributes:
-			mean (float) representing the mean value of the distribution
-			stdev (float) representing the standard deviation of the distribution
-			data_list (list of floats) a list of floats extracted from the data file
+			c_utt (np array of float or path to clean audio) representing the info for clean utterance
+			n_utt (np array of float or path to clean audio) representing the info for noisy utterance
+			c_sr (integer) sample rate for clean utterance
+			n_sr (integer) sample rate for noisy utterance
 			"""
 		
 		self.c_utt = clean_utt
@@ -25,8 +26,9 @@ class OQM:
 
 	def load(self, clean_utt,noise_utt):
 	
-		"""Function to read in data from a txt file. The txt file should have
-		one number (float) per line. The numbers are stored in the data attribute.
+		"""Function to load the clean and noisy utterance if the path is specified.
+		OR if numpy arrays are passed to the function then it just resamples it with 
+		sample rate equal to 16000(its a requirement for the PESQ class to work properly)
 				
 		Args:
 			file_name (string): name of a file to read from

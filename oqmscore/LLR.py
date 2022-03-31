@@ -3,13 +3,21 @@ from .OQM import OQM
 from scipy.linalg import toeplitz
 
 class LLR(OQM):
-	""" Gaussian distribution class for calculating and 
-	visualizing a Gaussian distribution.
+	""" Log likelihood ratio class for calculating LLR score for 
+	Objective quality measure.
 	
 	Attributes:
-		mean (float) representing the mean value of the distribution
-		stdev (float) representing the standard deviation of the distribution
-		data_list (list of floats) a list of floats extracted from the data file
+		c_utt (np array of float or path to clean audio) representing the info for clean utterance
+		n_utt (np array of float or path to clean audio) representing the info for noisy utterance
+		c_sr (integer) sample rate for clean utterance
+		n_sr (integer) sample rate for noisy utterance
+		llr_score (float) stores the llr score for the speech sample
+		aplha (float) do not know what this is for, please make a pull request and update it if 
+		you know what it is.
+
+	Methods: 
+		score : Calculates the LLR score for the utterance.
+		lpcoeff : linear predictive coefficients that help calculate the LLR
 			
 	"""
 	def __init__(self, clean_utt='', noise_utt=''):

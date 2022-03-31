@@ -2,13 +2,19 @@ import numpy as np
 from .OQM import OQM
 
 class SSNR(OQM):
-	""" Gaussian distribution class for calculating and 
-	visualizing a Gaussian distribution.
+	""" Segmental signal to noise ratio class for calculating SSNR score for 
+	Objective quality measure.
 	
 	Attributes:
-		mean (float) representing the mean value of the distribution
-		stdev (float) representing the standard deviation of the distribution
-		data_list (list of floats) a list of floats extracted from the data file
+		c_utt (np array of float or path to clean audio) representing the info for clean utterance
+		n_utt (np array of float or path to clean audio) representing the info for noisy utterance
+		c_sr (integer) sample rate for clean utterance
+		n_sr (integer) sample rate for noisy utterance
+		ssnr_score (float) stores the ssnr score for the speech sample
+		
+
+	Methods: 
+		score : Calculates the ssnr score for the utterance.
 			
 	"""
 	def __init__(self, clean_utt='', noise_utt=''):
